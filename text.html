@@ -123,23 +123,26 @@ ws.onclose = () => {
 
 //接收 Server 發送的訊息
 ws.onmessage = event => {
-  console.log(event);
+  console.log(event); 
+//檢查事件是否為Blob格式
   if (event.data instanceof Blob) {
-    var reader = new FileReader();
+    var reader = new FileReader();  // 創建 FileReader 對象
+// 當 FileReader 完成讀取時觸發
     reader.addEventListener("loadend", function() {
-      if(!$("#txtShow").val())
+      if(!$("#txtShow").val())  // 如果 #txtShow 元素沒有值，則設置讀取的結果
         $("#txtShow").val(reader.result);
-      else
+      else  // 否則，在現有的值後面追加讀取的結果
         $("#txtShow").val($("#txtShow").val()+"\n"+reader.result);
     });
-    reader.readAsText(event.data);
+    reader.readAsText(event.data);  //將Blob的資料讀取為字串格式
 	
   } else {
+ // 如果事件數據不是 Blob 格式，直接顯示在 #txtShow 元素中
 	$("#txtShow").show();
     if(!$("#txtShow").val())
-      $("#txtShow").val(event.data);
+      $("#txtShow").val(event.data);  // 如果 #txtShow 元素沒有值，則設置事件數據
     else
-      $("#txtShow").val($("#txtShow").val()+"\n"+event.data);
+      $("#txtShow").val($("#txtShow").val()+"\n"+event.data);  // 否則，在現有的值後面追加事件數據
   }
   let data = JSON.parse(event.data);
   let cssClass = data.user === "user1" ? "sent" : "received"; // 判斷是否為當前使用者發送的訊息
