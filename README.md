@@ -1,5 +1,5 @@
-# ChatBox
-使用node.js+HTML實現WebSocket的即時聊天室
+# 目的
+
 
 # 前端
 使用 HTML 設置了一個 WebSocket 的即時聊天室。它包含套用three.js的模板以增加視覺吸引力，並處理輸入和伺服器消息以維持活躍的聊天會話。使用 jQuery 簡化了 DOM 操作和事件處理。
