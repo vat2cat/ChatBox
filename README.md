@@ -1,5 +1,9 @@
 # 目的
+使用Node.js + WebSocket 完成遊戲中的即時聊天室。
 
+# Demo
+聊天室連線後實際使用畫面。
+![109623](https://github.com/vat2cat/ChatBox/assets/160461838/5257d18c-8bb2-409e-ac34-28e9cc47d27e)
 
 # 前端
 使用 HTML 設置了一個 WebSocket 的即時聊天室。它包含套用three.js的模板以增加視覺吸引力，並處理輸入和伺服器消息以維持活躍的聊天會話。使用 jQuery 簡化了 DOM 操作和事件處理。
